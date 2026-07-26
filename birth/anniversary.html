@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Anniversary ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+background:linear-gradient(135deg,#ffccd5,#ff8fab,#ff5d8f);
+
+}
+
+/* Floating Hearts */
+
+.heart{
+
+position:absolute;
+font-size:30px;
+animation:float 8s linear infinite;
+
+}
+
+.h1{left:5%;animation-delay:0s;}
+.h2{left:20%;animation-delay:2s;}
+.h3{left:40%;animation-delay:4s;}
+.h4{left:60%;animation-delay:1s;}
+.h5{left:80%;animation-delay:3s;}
+.h6{left:95%;animation-delay:5s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120px);
+opacity:0;
+}
+
+}
+
+/* Card */
+
+.card{
+
+width:900px;
+background:white;
+border-radius:30px;
+padding:40px;
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+animation:zoom 1s;
+
+}
+
+@keyframes zoom{
+
+from{
+opacity:0;
+transform:scale(.7);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+h1{
+
+font-family:'Pacifico',cursive;
+font-size:55px;
+color:#ff4d88;
+
+margin-bottom:20px;
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+0%{text-shadow:0 0 5px pink;}
+50%{text-shadow:0 0 25px hotpink;}
+100%{text-shadow:0 0 5px pink;}
+
+}
+
+.photo{
+
+margin:25px auto;
+
+}
+
+.photo img{
+
+width:280px;
+height:280px;
+object-fit:cover;
+
+border-radius:50%;
+border:10px solid #ff9ec4;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+animation:beat 1.2s infinite;
+
+}
+
+@keyframes beat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+
+}
+
+.message{
+
+font-size:22px;
+line-height:1.8;
+color:#555;
+
+margin-top:20px;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:15px 45px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ff4d88;
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff2f75;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">💗</div>
+<div class="heart h5">💞</div>
+<div class="heart h6">💘</div>
+
+<div class="card">
+
+<h1>Happy Anniversary ❤️</h1>
+
+<div class="photo">
+
+<img src="happy-pets-love-pets.gif" alt="Anniversary">
+
+</div>
+
+<div class="message">
+
+<p>
+
+Every day with you is a beautiful blessing. ❤️
+
+</p>
+
+<p>
+
+Thank you for filling my life with happiness,
+love, laughter and unforgettable memories.
+
+</p>
+
+<p>
+
+I wish we celebrate many more anniversaries together.
+
+</p>
+
+<p>
+
+<b>I Love You Forever ❤️</b>
+
+</p>
+
+</div>
+
+<button onclick="nextPage()">
+
+One Last Surprise 🤗
+
+</button>
+
+</div>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+function nextPage(){
+
+window.location.href="hug.html";
+
+}
+
+</script>
+
+</body>
+</html>

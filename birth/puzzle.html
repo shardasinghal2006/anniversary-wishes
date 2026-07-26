@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Our Love Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ffd6e0,#ff9bb8,#ff5d8f);
+}
+#popupMessage{
+
+    width:90%;
+    margin:auto;
+
+    font-size:22px;
+    line-height:1.8;
+
+    color:#444;
+
+    min-height:320px;
+
+    white-space:pre-wrap;
+
+    border-right:3px solid #ff4d88;
+
+    overflow:hidden;
+
+}
+.container{
+    width:min(900px,100vw);
+    padding:28px;
+    text-align:center;
+    background:rgba(255,255,255,.16);
+    backdrop-filter:blur(10px);
+    border-radius:28px;
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+h1{
+    font-family:'Pacifico',cursive;
+    color:white;
+    font-size:clamp(32px,5vw,52px);
+    margin-bottom:10px;
+    text-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.subtitle{color:white;margin-bottom:24px;font-size:18px}
+
+.board{
+    width:600px;
+    max-width:100%;
+    aspect-ratio:3/2;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows:repeat(2,1fr);
+    border:5px solid white;
+    border-radius:22px;
+    overflow:hidden;
+    background:white;
+}
+
+.piece{
+    width:100%;
+    height:100%;
+    background-image:url('wee.jpeg');
+    background-repeat:no-repeat;
+    background-size:400% 200%;
+    border:1px solid rgba(255,255,255,.65);
+    cursor:grab;
+    user-select:none;
+    transition:transform .15s ease, filter .15s ease;
+}
+
+.piece:active{cursor:grabbing;transform:scale(.98)}
+.piece.dragging{opacity:.45;filter:brightness(.8)}
+
+.success{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.65);
+    z-index:20;
+    padding:20px;
+}
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+}
+
+.popup-content{
+
+    width:700px;
+    height:600px;          /* Fixed height */
+
+    background:#fff;
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+.popup h2{
+    font-family:'Pacifico',cursive;
+    color:#ff4d88;
+    font-size:38px;
+    margin-bottom:12px;
+}
+.next-btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:15px 45px;
+
+    background:#ff4d88;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    border:none;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(255,77,136,0.4);
+
+    transition:0.3s;
+
+}
+
+
+.next-btn:hover{
+
+    background:#ff2f74;
+
+    transform:scale(1.08);
+
+}
+.popup p{font-size:18px;line-height:1.7;color:#555;margin-bottom:24px}
+
+.popup button{
+    border:none;
+    background:#ff4d88;
+    color:white;
+    padding:14px 34px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.heart{
+    position:fixed;
+    bottom:-60px;
+    font-size:28px;
+    animation:float 8s linear infinite;
+    opacity:.8;
+    pointer-events:none;
+}
+
+.h1{left:8%}.h2{left:25%;animation-delay:2s}.h3{left:50%;animation-delay:4s}.h4{left:75%;animation-delay:1s}.h5{left:92%;animation-delay:5s}
+
+@keyframes float{
+    0%{transform:translateY(0);opacity:0}
+    20%{opacity:1}
+    100%{transform:translateY(-115vh);opacity:0}
+}
+#popupMessage{
+
+    height:340px;          /* Fixed height */
+
+    overflow-y:auto;       /* Scroll inside */
+
+    padding:10px;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#444;
+
+    white-space:pre-wrap;
+
+    text-align:center;
+
+    border-right:3px solid hotpink;
+
+    scrollbar-width:thin;
+
+}
+.confetti{
+    position:fixed;
+    top:-20px;
+    font-size:24px;
+    pointer-events:none;
+    z-index:30;
+    animation:fall 3.5s linear forwards;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh) rotate(720deg);opacity:0}
+}
+
+@media(max-width:700px){
+    .container{padding:18px}
+    .subtitle{font-size:15px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">💗</div>
+<div class="heart h5">💞</div>
+
+<div class="container">
+    <h1>Complete Our Love Story ❤️</h1>
+    <p class="subtitle">Drag one piece onto another piece to swap them.</p>
+
+    <div class="board" id="board">
+        <div class="piece" draggable="true" data-piece="0"></div>
+        <div class="piece" draggable="true" data-piece="1"></div>
+        <div class="piece" draggable="true" data-piece="2"></div>
+        <div class="piece" draggable="true" data-piece="3"></div>
+        <div class="piece" draggable="true" data-piece="4"></div>
+        <div class="piece" draggable="true" data-piece="5"></div>
+        <div class="piece" draggable="true" data-piece="6"></div>
+        <div class="piece" draggable="true" data-piece="7"></div>
+    </div>
+</div>
+
+<div class="success" id="success">
+    <div class="popup-content">
+       <h2 id="popupTitle">🎉 Congratulations ❤️</h2>
+      <p id="popupMessage"></p>
+       <button class="next-btn" onclick="location.href='memory.html'">
+    Next ❤️
+</button>
+    </div>
+</div>
+
+<script>
+const board = document.getElementById('board');
+let dragged = null;
+
+// Set correct image part for each piece
+function setPieceImage(piece){
+    const id = Number(piece.dataset.piece);
+    const col = id % 4;
+    const row = Math.floor(id / 4);
+    piece.style.backgroundPosition = `${col * 33.333333}% ${row * 100}%`;
+}
+
+// Setup all pieces
+function setupPieces(){
+    const pieces = [...board.querySelectorAll('.piece')];
+
+    pieces.forEach(piece => {
+        setPieceImage(piece);
+
+        piece.addEventListener('dragstart', () => {
+            dragged = piece;
+            piece.classList.add('dragging');
+        });
+
+        piece.addEventListener('dragend', () => {
+            piece.classList.remove('dragging');
+            dragged = null;
+        });
+
+        piece.addEventListener('dragover', e => {
+            e.preventDefault();
+        });
+
+        piece.addEventListener('drop', e => {
+            e.preventDefault();
+            if(!dragged || dragged === piece) return;
+            swapPieces(dragged, piece);
+            checkComplete();
+        });
+    });
+}
+const message = `365 beautiful days... ❤️
+Every smile,
+Every laugh,
+Every memory,
+Every hug,
+Every "I Love You"...
+All became the most beautiful part of my life because of YOU. 🥹❤️
+Thank you for loving me,
+supporting me,
+and staying beside me every single day.
+Happy 1st Anniversary My Love ❤️💋
+You completed every puzzle piece...
+just like you completed my life. ❤️
+I Love You Forever 💖`;
+
+
+function typeCongratulations(){
+
+    const box = document.getElementById("popupMessage");
+
+    box.innerHTML = "";
+
+    let i = 0;
+
+    function typing(){
+
+        if(i >= message.length) return;
+
+        if(message.charAt(i) === "\n"){
+            box.innerHTML += "<br>";
+        }else{
+            box.innerHTML += message.charAt(i);
+        }
+
+        i++;                              // VERY IMPORTANT
+
+        box.scrollTop = box.scrollHeight;
+
+        setTimeout(typing,35);
+    }
+
+    typing();
+}
+// Swap two DOM pieces
+function swapPieces(a, b){
+    const marker = document.createElement('div');
+    board.insertBefore(marker, a);
+    board.insertBefore(a, b);
+    board.insertBefore(b, marker);
+    marker.remove();
+}
+
+// Shuffle pieces inside board
+function shufflePieces(){
+    const pieces = [...board.querySelectorAll('.piece')];
+    for(let i = pieces.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [pieces[i], pieces[j]] = [pieces[j], pieces[i]];
+    }
+    pieces.forEach(piece => board.appendChild(piece));
+}
+
+// Check if pieces are in correct order
+function checkComplete(){
+    const current = [...board.querySelectorAll('.piece')];
+    const solved = current.every((piece, index) => Number(piece.dataset.piece) === index);
+
+    if(solved){
+        setTimeout(showSuccess, 300);
+    }
+}
+
+function showSuccess(){
+    document.getElementById('success').style.display = 'flex';
+    
+    typeCongratulations();
+}
+
+function createConfetti(){
+    const emojis = ['❤️','💕','💖','🌸','🎉'];
+    for(let i = 0; i < 70; i++){
+        const el = document.createElement('div');
+        el.className = 'confetti';
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.animationDelay = Math.random() * 0.8 + 's';
+        el.style.fontSize = (18 + Math.random() * 18) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 4500);
+    }
+}
+
+setupPieces();
+shufflePieces();
+</script>
+
+</body>
+</html>

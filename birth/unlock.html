@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something Special ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+background:linear-gradient(135deg,#ffccd5,#ff8fab,#ff5d8f);
+
+}
+
+.container{
+
+text-align:center;
+color:white;
+animation:fadeIn 1.5s;
+
+}
+
+h1{
+
+font-family:'Pacifico',cursive;
+font-size:55px;
+margin-bottom:20px;
+text-shadow:2px 2px 10px rgba(0,0,0,.3);
+
+}
+
+.typewriter{
+
+font-size:28px;
+font-weight:bold;
+white-space:nowrap;
+overflow:hidden;
+border-right:4px solid white;
+width:0;
+margin:auto;
+
+animation:
+typing 4s steps(32,end) forwards,
+blink .8s infinite;
+
+}
+
+.heart{
+
+font-size:100px;
+margin:40px 0;
+animation:beat 1s infinite;
+
+}
+
+button{
+
+margin-top:40px;
+padding:15px 45px;
+
+font-size:22px;
+border:none;
+border-radius:40px;
+
+background:white;
+color:#ff4d88;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+.floating{
+
+position:absolute;
+font-size:30px;
+color:white;
+
+animation:float 8s linear infinite;
+
+}
+
+.f1{left:10%;animation-delay:0s;}
+.f2{left:30%;animation-delay:2s;}
+.f3{left:50%;animation-delay:4s;}
+.f4{left:70%;animation-delay:6s;}
+.f5{left:90%;animation-delay:1s;}
+
+@keyframes typing{
+
+from{width:0;}
+
+to{width:100%;}
+
+}
+
+@keyframes blink{
+
+50%{
+
+border-color:transparent;
+
+}
+
+}
+
+@keyframes beat{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.15);}
+100%{transform:scale(1);}
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120px);
+opacity:0;
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+.couple{
+    position: fixed;
+    bottom: 150px;
+    left: 410px;
+    width: 690px;
+    animation: bounce 2.5s ease-in-out infinite;
+}
+/* Dudu - Left Side */
+
+
+/* Floating Animation */
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="floating f1">❤️</div>
+<div class="floating f2">💕</div>
+<div class="floating f3">💖</div>
+<div class="floating f4">💗</div>
+<div class="floating f5">💞</div>
+
+<div class="container">
+<!-- Left Character -->
+<img src="ChatGPT Image Jul 23, 2026, 04_47_49 PM.png" class="couple" alt="Dudu and Bubu">
+
+
+<h1>Yayyyyy ❤️</h1>
+
+<div class="typewriter">
+
+I MADE SOMETHING SPECIAL FOR YOU...
+
+</div>
+
+<div class="heart">
+
+🎁
+
+</div>
+
+<button onclick="nextPage()">
+
+Open My Surprise 💌
+
+</button>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function nextPage(){
+
+window.location="question.html";
+
+}
+
+</script>
+
+</body>
+</html>

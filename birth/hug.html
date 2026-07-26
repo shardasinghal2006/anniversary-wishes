@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Virtual Hug ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(135deg,#ffd6e0,#ff8fb1,#ff5d8f);
+
+}
+
+/* Floating Hearts */
+
+.heart{
+
+position:absolute;
+font-size:30px;
+animation:float 7s linear infinite;
+
+}
+
+.heart:nth-child(1){left:5%;animation-delay:0s;}
+.heart:nth-child(2){left:20%;animation-delay:2s;}
+.heart:nth-child(3){left:35%;animation-delay:4s;}
+.heart:nth-child(4){left:50%;animation-delay:1s;}
+.heart:nth-child(5){left:65%;animation-delay:3s;}
+.heart:nth-child(6){left:80%;animation-delay:5s;}
+.heart:nth-child(7){left:95%;animation-delay:2s;}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(100vh);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120px);
+opacity:0;
+
+}
+
+}
+
+/* Card */
+
+.card{
+
+width:900px;
+
+background:white;
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+animation:zoom 1s;
+
+}
+
+@keyframes zoom{
+
+from{
+
+opacity:0;
+transform:scale(.7);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+h1{
+
+font-family:'Pacifico',cursive;
+font-size:55px;
+color:#ff4d88;
+margin-bottom:15px;
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+0%{text-shadow:0 0 5px pink;}
+50%{text-shadow:0 0 25px hotpink;}
+100%{text-shadow:0 0 5px pink;}
+
+}
+
+h2{
+
+color:#666;
+margin-bottom:25px;
+font-size:24px;
+
+}
+
+img{
+
+width:200px;
+height:200px;
+object-fit:cover;
+
+border-radius:50%;
+
+border:10px solid pink;
+
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+animation:hug 1.5s infinite;
+
+}
+
+@keyframes hug{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.message{
+
+margin-top:30px;
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:15px 45px;
+
+font-size:20px;
+
+background:#ff4d88;
+
+color:white;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff2f75;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="heart">❤️</div>
+<div class="heart">💕</div>
+<div class="heart">💖</div>
+<div class="heart">💗</div>
+<div class="heart">💞</div>
+<div class="heart">💘</div>
+<div class="heart">💝</div>
+
+<div class="card">
+
+<h1>Virtual Hug 🤗</h1>
+
+<h2>Sending You The Biggest Hug ❤️</h2>
+
+<img src="mocha-and-milk-bears-milk.gif" alt="Virtual Hug">
+
+<div class="message">
+
+<p>
+
+Whenever you miss me...
+
+Close your eyes...
+
+Imagine me standing beside you...
+
+Wrapping my arms around you...
+
+And giving you the warmest hug. 🤗❤️
+
+</p>
+
+
+
+<p>
+
+No matter how far we are,
+
+my heart will always find its way to yours.
+
+</p>
+
+
+<h2>
+
+❤️ Happy Anniversary My Love ❤️
+
+</h2>
+
+</div>
+<a href="puzzle.html">
+    <button>There is something There for you ❤️</button>
+</a>
+
+</div>
+
+<audio autoplay loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+<script>
+
+function finish(){
+
+alert("❤️ Thank You For Being My Everything ❤️\n\nHappy Anniversary My Love 🥰");
+
+}
+
+</script>
+<script>
+function openPuzzle(){
+    window.location.href = "puzzle.html";
+}
+</script>
+</body>
+</html>

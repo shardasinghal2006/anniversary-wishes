@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+background:linear-gradient(135deg,#ffb6c1,#ff8fab,#ff5d8f);
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.container{
+width:1100px;
+height:650px;
+background:#fff;
+border-radius:30px;
+display:flex;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.left{
+
+flex:1;
+background:#ff6b81;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+
+}
+
+.music{
+
+position:absolute;
+top:60px;
+left:-150px;
+font-size:40px;
+color:white;
+white-space:nowrap;
+animation:music 6s linear infinite;
+
+}
+
+@keyframes music{
+
+0%{
+
+transform:translateX(0) translateY(0) rotate(-15deg);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateX(380px) translateY(-120px) rotate(-15deg);
+opacity:0;
+
+}
+
+}
+
+.heart{
+
+width:470px;
+height:470px;
+
+}
+
+.heart svg{
+
+width:100%;
+height:100%;
+
+filter:drop-shadow(0 10px 15px rgba(0,0,0,.3));
+
+}
+
+.ribbon{
+
+position:absolute;
+top:70px;
+left:100px;
+font-size:90px;
+
+}
+
+.right{
+
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:#fff;
+
+}
+
+.right h1{
+
+color:#ff4d88;
+margin-bottom:30px;
+
+}
+
+.password{
+
+display:flex;
+gap:15px;
+margin-bottom:30px;
+
+}
+
+.box{
+
+width:60px;
+height:60px;
+border:2px solid #ff6b81;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+font-weight:bold;
+
+}
+
+.keypad{
+
+display:grid;
+grid-template-columns:repeat(3,80px);
+gap:15px;
+
+}
+
+.keypad button{
+
+height:65px;
+border:none;
+border-radius:15px;
+font-size:22px;
+background:#ff6b81;
+color:white;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.keypad button:hover{
+
+transform:scale(1.08);
+
+}
+
+#message{
+
+margin-top:25px;
+font-size:22px;
+font-weight:bold;
+color:#ff4d88;
+
+}
+
+#retry{
+
+display:none;
+margin-top:20px;
+padding:12px 25px;
+background:#ff6b81;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+
+}
+/* Background Hearts */
+
+.bg-hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+.bg-hearts span{
+    position:absolute;
+    color:rgba(255,255,255,0.15);
+    font-size:70px;
+}
+
+/* Fixed Positions */
+
+.bg-hearts span:nth-child(1){
+    top:5%;
+    left:6%;
+    font-size:60px;
+}
+
+.bg-hearts span:nth-child(2){
+    top:18%;
+    right:12%;
+    font-size:80px;
+}
+
+.bg-hearts span:nth-child(3){
+    bottom:10%;
+    left:8%;
+    font-size:70px;
+}
+
+.bg-hearts span:nth-child(4){
+    bottom:18%;
+    right:8%;
+    font-size:65px;
+}
+
+.bg-hearts span:nth-child(5){
+    top:45%;
+    left:45%;
+    font-size:90px;
+}
+
+.bg-hearts span:nth-child(6){
+    top:70%;
+    right:30%;
+    font-size:50px;
+}
+.container,
+.card,
+.left,
+.right{
+    position:relative;
+    z-index:2;
+}
+</style>
+
+</head>
+<body>
+<div class="bg-hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
+<div class="container">
+
+<div class="left">
+
+<div class="music">
+♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ ♪ ♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ ♪
+</div>
+
+<div class="heart">
+
+<svg width="360" height="330" viewBox="0 0 512 512">
+
+        <defs>
+            <clipPath id="heartClip">
+                <path d="M256 464
+                C220 430 32 290 32 160
+                C32 80 92 36 156 36
+                C206 36 240 64 256 96
+                C272 64 306 36 356 36
+                C420 36 480 80 480 160
+                C480 290 292 430 256 464Z"/>
+            </clipPath>
+        </defs>
+
+        <image
+    href="b.gif"
+    x="20"
+    y="1"
+    width="450"
+    height="440"
+    clip-path="url(#heartClip)"
+    preserveAspectRatio="xMidYMid slice"/>
+
+        <path
+            d="M256 464
+            C220 430 32 290 32 160
+            C32 80 92 36 156 36
+            C206 36 240 64 256 96
+            C272 64 306 36 356 36
+            C420 36 480 80 480 160
+            C480 290 292 430 256 464Z"
+            fill="none"
+            stroke="white"
+            stroke-width="12"/>
+
+    </svg>
+
+</div>
+
+<div class="ribbon">🎀</div>
+
+</div>
+
+<div class="right">
+
+<h1>Enter Passcode ❤️</h1>
+
+<div class="password">
+
+<div class="box" id="b1"></div>
+<div class="box" id="b2"></div>
+<div class="box" id="b3"></div>
+<div class="box" id="b4"></div>
+
+</div>
+
+<div class="keypad">
+
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+
+<button onclick="clearPass()">⌫</button>
+<button onclick="press('0')">0</button>
+<button onclick="checkPassword()">🔓</button>
+
+</div>
+
+<p id="message"></p>
+
+<button id="retry" onclick="clearPass()">
+Try Again
+</button>
+
+</div>
+
+</div>
+
+<audio id="music" autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let password="";
+let correct="1430";
+
+function update(){
+
+for(let i=1;i<=4;i++){
+
+document.getElementById("b"+i).innerHTML=password[i-1]?"●":"";
+
+}
+
+}
+
+function press(n){
+
+if(password.length<4){
+
+password+=n;
+
+update();
+
+}
+
+}
+
+function clearPass(){
+
+password="";
+update();
+
+document.getElementById("message").innerHTML="";
+document.getElementById("retry").style.display="none";
+
+}
+
+function checkPassword(){
+
+if(password.length!=4){
+
+document.getElementById("message").innerHTML="Enter 4 digits ❤️";
+return;
+
+}
+
+if(password==correct){
+
+document.getElementById("message").innerHTML="❤️ Correct ❤️";
+
+setTimeout(()=>{
+
+window.location="unlock.html";
+
+},1200);
+
+}
+else{
+
+document.getElementById("message").innerHTML="❌ Wrong Passcode";
+
+document.getElementById("retry").style.display="block";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

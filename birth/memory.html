@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Beautiful Memories ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* PART 2 CSS WILL COME HERE */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+.memory-slider{
+    width:100%;
+    overflow:hidden;
+    padding:30px 0;
+}
+
+.track{
+    display:flex;
+    gap:20px;
+    width:max-content;
+    animation:scroll 80s linear infinite;
+}
+
+.track img,
+.track video{
+
+    width:260px;
+    height:360px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:5px solid white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    transition:.4s;
+}
+
+.track img:hover,
+.track video:hover{
+
+    transform:scale(1.08);
+
+}
+
+@keyframes scroll{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(-50%);
+
+}
+
+}
+body{
+
+background:linear-gradient(135deg,#ffd6e0,#ff8fb1,#ff5d8f);
+
+min-height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+/* Floating Hearts */
+
+.heart{
+
+position:fixed;
+
+bottom:-80px;
+
+font-size:28px;
+
+animation:float 10s linear infinite;
+
+opacity:.8;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.h1{left:5%;animation-delay:0s;}
+.h2{left:20%;animation-delay:2s;}
+.h3{left:40%;animation-delay:4s;}
+.h4{left:65%;animation-delay:1s;}
+.h5{left:88%;animation-delay:6s;}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) scale(.7);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+/* Main Container */
+
+.container{
+
+width:95%;
+
+max-width:1200px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(12px);
+
+padding:35px;
+
+border-radius:30px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+text-align:center;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/* Heading */
+
+h1{
+
+font-family:'Pacifico',cursive;
+
+font-size:52px;
+
+color:white;
+
+margin-bottom:15px;
+
+text-shadow:0 4px 10px rgba(0,0,0,.2);
+
+}
+
+.subtitle{
+
+font-size:20px;
+
+color:white;
+
+margin-bottom:25px;
+
+}
+
+/* Slider */
+
+.slider{
+
+width:900px;
+
+height:520px;
+
+margin:auto;
+
+overflow:hidden;
+
+position:relative;
+
+border-radius:25px;
+
+background:white;
+
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+/* Slides */
+
+.slide{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+opacity:0;
+
+transition:1s;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.slide.active{
+
+opacity:1;
+
+}
+
+/* Images */
+
+.slide img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+background:black;
+
+}
+
+/* Videos */
+
+.slide video{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+background:black;
+
+}
+
+/* Controls */
+
+.controls{
+
+margin-top:25px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.controls button{
+
+width:60px;
+
+height:60px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ff4d88;
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+.controls button:hover{
+
+transform:scale(1.12);
+
+background:#ff2f74;
+
+}
+
+/* Next Button */
+
+.next-btn{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:16px 45px;
+
+background:#ff4d88;
+
+color:white;
+
+font-size:22px;
+
+font-weight:600;
+
+text-decoration:none;
+
+border-radius:50px;
+
+transition:.3s;
+
+box-shadow:0 8px 20px rgba(255,77,136,.4);
+
+}
+
+.next-btn:hover{
+
+background:#ff2f74;
+
+transform:scale(1.08);
+
+}
+
+/* Fade */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+.slide.active{
+
+animation:fade 1s;
+
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.slider{
+
+width:95%;
+
+height:420px;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💖</div>
+<div class="heart h4">💗</div>
+<div class="heart h5">💞</div>
+
+<div class="container">
+
+<h1>📸 Our Beautiful Memories ❤️</h1>
+
+<p class="subtitle">
+Every picture tells a story...
+Every video brings back a beautiful memory 💕
+</p>
+
+<!-- Slider -->
+<div class="track">
+
+    <img src="img/img1.jpeg">
+    <video src="vc/video1.mp4" autoplay muted loop></video>
+
+    <img src="img/img2.jpeg">
+    <video src="vc/video2.mp4" autoplay muted loop></video>
+
+    <img src="img/img3.jpeg">
+    <img src="img/img4.jpeg">
+    <video src="vc/video3.mp4" autoplay muted loop></video>
+
+    <img src="img/img5.jpeg">
+    <img src="img/img6.jpeg">
+    <video src="vc/video4.mp4" autoplay muted loop></video>
+
+    <img src="img/img7.jpeg">
+    <img src="img/img8.jpeg">
+    <video src="vc/video5.mp4" autoplay muted loop></video>
+
+    <img src="img/img9.jpeg">
+    <img src="img/img10.jpeg">
+    <video src="vcvideo6.mp4" autoplay muted loop></video>
+
+    <img src="img/img11.jpeg">
+    <img src="img/img12.jpeg">
+    <video src="vc/video7.mp4" autoplay muted loop></video>
+
+    <img src="img/img13.jpeg">
+    <img src="img/img14.jpeg">
+    <video src="vc/video8.mp4" autoplay muted loop></video>
+
+    <img src="img/img15.jpeg">
+    <img src="img/img16.jpeg">
+    <img src="img/img17.jpeg">
+    <img src="img/img18.jpeg">
+    <img src="img/img19.jpeg">
+    <img src="img/img20.jpeg">
+    <img src="img/img21.jpeg">
+    <img src="img/img22.jpeg">
+    <img src="img/img23.jpeg">
+    <img src="img/img24.jpeg">
+    <img src="img/img25.jpeg">
+    <video src="vc/video9.mp4" autoplay muted loop></video>
+    <img src="img/img26.jpeg">
+    <img src="img/img27.jpeg">
+    <img src="img/img28.jpeg">
+    <img src="img/img29.jpeg">
+    <img src="img/img30.jpeg">
+    <img src="img/img31.jpeg">
+    <img src="img/img32.jpeg">
+    <img src="img/img33.jpeg">
+    <img src="img/img34.jpeg">
+    <img src="img/img35.jpeg">
+    <img src="img/img36.jpeg">
+
+</div>
+
+<div class="controls">
+
+
+
+</div>
+
+<a href="countdown.html" class="next-btn">
+Next ❤️
+</a>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* PART 3 JAVASCRIPT WILL COME HERE */
+
+</script>
+
+</body>
+</html>
