@@ -317,6 +317,20 @@ music.play().catch(() => {
     }, { once: true });
 });
 
+// Save current position every second
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+
+
+// Play music
+music.play().catch(() => {
+    document.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+});
+
 
 let noCount = 0;
 
