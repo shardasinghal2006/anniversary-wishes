@@ -521,13 +521,6 @@ music.play().catch(() => {
     }, { once: true });
 });
 
-const music = document.getElementById("bgMusic");
-
-// Restore playback position
-const savedTime = localStorage.getItem("musicTime");
-if (savedTime) {
-    music.currentTime = savedTime;
-}
 
 
 /* PART 3 JAVASCRIPT WILL COME HERE */
