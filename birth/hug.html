@@ -279,13 +279,31 @@ my heart will always find its way to yours.
 
 </div>
 
-<audio autoplay loop>
-
-<source src="music.mp3" type="audio/mpeg">
-
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+const music = document.getElementById("bgMusic");
+
+// Restore playback position
+const savedTime = localStorage.getItem("musicTime");
+if (savedTime) {
+    music.currentTime = savedTime;
+}
+
+// Play music
+music.play().catch(() => {
+    document.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+});
+
+// Save current position every second
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
 
 function finish(){
 
