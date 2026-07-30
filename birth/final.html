@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Anniversary ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ffd6e0,#ff9bb8,#ff5d8f);
+    overflow:hidden;
+}
+
+.award{
+    width:80%;
+    max-width:1100px;
+    height:auto;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    animation:zoom 1.5s ease;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+/* Floating Hearts */
+
+.heart{
+
+position:absolute;
+
+bottom:-60px;
+
+font-size:28px;
+
+animation:float 8s linear infinite;
+
+pointer-events:none;
+
+opacity:.8;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0) scale(.8);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.6);
+
+opacity:0;
+
+}
+
+}
+
+.heart:nth-child(2){left:5%;animation-delay:0s;}
+.heart:nth-child(3){left:18%;animation-delay:2s;}
+.heart:nth-child(4){left:35%;animation-delay:4s;}
+.heart:nth-child(5){left:55%;animation-delay:1s;}
+.heart:nth-child(6){left:75%;animation-delay:5s;}
+.heart:nth-child(7){left:92%;animation-delay:3s;}
+
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(255,192,203,.08);
+
+}
+
+.final{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:white;
+    z-index:10;
+    text-shadow:0 2px 8px rgba(0,0,0,.7);
+}
+
+.final h1{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.final p{
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+.final button{
+    padding:10px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    background:#ff4d88;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.final button:hover{
+    background:#ff2f74;
+    transform:scale(1.05);
+}
+
+button{
+
+padding:16px 45px;
+
+font-size:22px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4d88;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+box-shadow:0 10px 20px rgba(255,77,136,.4);
+
+}
+
+button:hover{
+
+background:#ff2f74;
+
+transform:scale(1.08);
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+.heart-btn{
+    position:absolute;
+
+    right:11.5%;
+    bottom:9%;
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:42px;
+
+    background:transparent;
+
+    animation:heartbeat 1.2s infinite;
+
+    z-index:100;
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.2);
+}
+
+}
+.heart-btn{
+    position:absolute;
+    bottom:93px;
+    right:300px;
+
+    width:80px;
+    height:80px;
+
+    background:linear-gradient(145deg,#f3eaed,#ff4f87);
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:38px;
+    text-decoration:none;
+
+    box-shadow:
+        0 8px 20px rgba(254, 252, 253, 0.45),
+        inset 0 4px 8px rgba(255,255,255,.4),
+        inset 0 -4px 8px rgba(0,0,0,.12);
+
+    transition:.3s;
+}
+
+.heart-btn:hover{
+    transform:scale(1.12);
+    box-shadow:
+        0 12px 28px rgba(250, 248, 249, 0.55),
+        inset 0 4px 8px rgba(255,255,255,.45);
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Full Screen Certificate -->
+<img src="img/award.jpeg" class="award">
+
+
+<div class="overlay"></div>
+
+
+
+<a href="video.html" class="heart-btn">❤️</a>
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+// Restore playback position
+const savedTime = localStorage.getItem("musicTime");
+if (savedTime) {
+    music.currentTime = savedTime;
+}
+
+// Play music
+music.play().catch(() => {
+    document.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+});
+
+// Save current position every second
+setInterval(() => {
+    localStorage.setItem("musicTime", music.currentTime);
+}, 1000);
+
+
+function finish(){
+
+alert("❤️ Thank You For Opening My Little Surprise ❤️\n\nI Love You Forever 💖");
+
+}
+
+setInterval(()=>{
+
+const h=document.createElement("div");
+
+h.className="heart";
+
+
+
+h.innerHTML=hearts[Math.floor(Math.random()*hearts.length)];
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},8000);
+
+},500);
+
+</script>
+
+</body>
+</html>
